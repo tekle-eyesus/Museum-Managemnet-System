@@ -31,7 +31,7 @@ This JavaFX application is designed to efficiently manage the operations of a mu
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/museum-management-system.git](https://github.com/your-username/museum-management-system.git)
+   git clone https://github.com/tekle-eyesus/museum-management-system.git
 
 
   **Project Configuration steps:**
