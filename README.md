@@ -25,10 +25,26 @@ This JavaFX application is designed to efficiently manage the operations of a mu
 
 * JavaFX for the user interface
 * Java for backend logic and database interactions
-* [Database technology used, e.g., MySQL, SQLite] for data storage
+* XAMPP server for data storage
 
 **Getting Started**
 
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/your-username/museum-management-system.git](https://github.com/your-username/museum-management-system.git)
+
+
+  **Project Configuration steps:**
+ * 1st Step: Extract file
+ * 2nd Step: open “class_project” javafx project in IDE
+ * 3rd Step: Make sure JDK 21 is Available in system
+ **NowConnecting Database*
+ * 4th Step: Open a browser and go to URL “http://localhost/phpmyadmin/”
+ * 5th Step: Then, click on databases tab
+ * 6th Step: Create database naming “museumdb” and then click on import tab
+ * 7th Step: Click on browse file and select “museumdb.sql” file which is inside main folder
+ * 8th Step: Click on go.
+ **After Creating Database,*
+ * 9th Step: Build and Run the project
+ **Insert the username=’admin’ and password =”admin” to login to system or Register and
+ create new Account*
