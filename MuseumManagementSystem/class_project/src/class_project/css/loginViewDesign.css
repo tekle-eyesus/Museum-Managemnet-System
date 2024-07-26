@@ -1,0 +1,49 @@
+.left-form{
+    -fx-border-width: .4px 0px .4px .4px;
+    -fx-background-color : linear-gradient(to bottom right,#957C3D,#002349);
+}
+.right-form{
+    -fx-background-color:#fff;
+    -fx-border-width: .4px .4px .4px 0px;
+}
+.close{
+    -fx-background-color: transparent;
+    -fx-cursor:hand;
+    
+}
+.close:hover{
+    -fx-background-color: #fb1427;
+}
+.textfield{
+    -fx-background-color:transparent;
+    -fx-border-width: .0px 0px .8px 0px;
+    -fx-border-color:#000;
+    -fx-font-size:13px;
+    -fx-font-family:"Thaoma";
+}
+/*.textfield:hover{
+        -fx-background-color : linear-gradient(to bottom right,#a34343,#30cc80);
+         -fx-border-width:0px 0px 1.8px 0px;
+}*/
+.loginbtn{
+       -fx-background-color : linear-gradient(to bottom right,#ad9f2d,#ae2c37);
+       -fx-font-size:14px;
+       -fx-text-fill:#fff;
+       -fx-font-family:"Arial";
+       -fx-cursor:hand;
+       -fx-background-radius:8px;
+}
+.registerbtn{
+       -fx-background-color : transparent;
+       -fx-font-size:14px;
+       -fx-text-fill:#2e08ed;
+       -fx-font-family:"Arial";
+       -fx-cursor:hand;
+       -fx-background-radius:8px;
+}
+.loginbtn:hover{
+    -fx-background-color : linear-gradient(to bottom right,#a34343,#30cc80);
+}
+
+
+

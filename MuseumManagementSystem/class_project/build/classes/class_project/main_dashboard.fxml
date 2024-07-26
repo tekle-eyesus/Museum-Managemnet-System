@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="class_project.Main_dashboardController">
+   <children>
+      <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0">
+         <children>
+            <AnchorPane prefHeight="600.0" prefWidth="889.0">
+               <children>
+                  <BorderPane layoutX="180.0" layoutY="51.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <top>
+                        <AnchorPane prefHeight="47.0" prefWidth="1101.0" styleClass="semi-top-form" BorderPane.alignment="CENTER">
+                           <children>
+                              <AnchorPane layoutX="2.0" layoutY="-7.0" prefHeight="600.0" prefWidth="1126.0" styleClass="top-form" AnchorPane.bottomAnchor="15.666666666666671" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-7.0">
+                                 <children>
+                                    <Button fx:id="close" layoutX="1051.0" layoutY="11.0" mnemonicParsing="false" onAction="#close" prefHeight="21.0" prefWidth="34.0" styleClass="close" stylesheets="@dashboardDesign.css" text="X">
+                                       <font>
+                                          <Font name="Sitka Heading" size="11.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="minimize" layoutX="1017.0" layoutY="11.0" mnemonicParsing="false" onAction="#minimize" prefHeight="22.0" prefWidth="34.0" styleClass="minimize" stylesheets="@uiDesign.css" text="-">
+                                       <font>
+                                          <Font name="Verdana Bold" size="11.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="41.0" layoutY="14.0" text="Musium Management System">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="29.0" fitWidth="26.0" layoutX="5.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/museum%20logo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <stylesheets>
+                                    <URL value="@dashboardDesign.css" />
+                                    <URL value="@uiDesign.css" />
+                                 </stylesheets>
+                              </AnchorPane>
+                           </children>
+                           <stylesheets>
+                              <URL value="@dashboardDesign.css" />
+                              <URL value="@uiDesign.css" />
+                           </stylesheets>
+                        </AnchorPane>
+                     </top>
+                     <left>
+                        <AnchorPane prefHeight="551.0" prefWidth="204.0" styleClass="nav-form" stylesheets="@uiDesign.css" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="103.0" fitWidth="108.0" layoutX="46.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/user.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="16.0" layoutY="143.0" text="Welcome," textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="greetingLabel" layoutX="100.0" layoutY="141.0" prefHeight="27.0" prefWidth="98.0" text="Admin" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Black" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="83.99998474121094" endY="1.52587890625E-5" layoutX="100.0" layoutY="194.0" startX="-78.00000762939453" startY="1.52587890625E-5" stroke="#e2e1e1" />
+                              <Button fx:id="dashboard_btn" layoutX="1.0" layoutY="201.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="203.0" styleClass="nav-btn" text="        Dashboard" textFill="#9e9eb3" AnchorPane.bottomAnchor="319.66666666666663" AnchorPane.rightAnchor="-0.3333333333333428">
+                                 <stylesheets>
+                                    <URL value="@dashboardDesign.css" />
+                                    <URL value="@uiDesign.css" />
+                                 </stylesheets>
+                                 <font>
+                                    <Font name="Tahoma Bold" size="12.0" />
+                                 </font></Button>
+                              <Button fx:id="manageItems_btn" layoutY="232.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="204.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="         manage Items" textFill="#bdc086" />
+                              <Button fx:id="bookingTicket_btn" layoutX="-1.0" layoutY="264.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="203.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="         Booking Ticket" textFill="WHITE" />
+                              <Button fx:id="visitors_btn" layoutY="296.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="204.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="         Visitors" textFill="#b6db3b" />
+                              <Button fx:id="logout" layoutX="17.0" layoutY="503.0" mnemonicParsing="false" onAction="#logout" prefHeight="23.0" prefWidth="76.0" styleClass="log-out-btn" stylesheets="@dashboardDesign.css" text="Logout" textFill="WHITE">
+                                 <font>
+                                    <Font name="Sitka Display Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="manageStuff_btn" layoutX="-1.0" layoutY="328.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="204.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="         Stuff" textFill="#b6db3b" />
+                              <Button fx:id="profile_btn" layoutX="-1.0" layoutY="363.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="204.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="         Profile" textFill="#b6db3b" />
+                              <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="13.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/dashboard-5480.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="13.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/crown-4710.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="13.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/bill-8853.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="13.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/team-5704.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="13.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/user-257.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="13.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/user-3296.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </left>
+                  </BorderPane>
+                  <AnchorPane layoutX="207.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="893.0" stylesheets="@dashboardDesign.css">
+                     <children>
+                        <AnchorPane fx:id="visitors_form" layoutX="6.0" layoutY="7.333333333333333" prefHeight="549.3333333333334" prefWidth="893.3333333333334" stylesheets="@dashboardDesign.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TextField fx:id="visitors_search" layoutX="20.0" layoutY="130.0" onKeyTyped="#visitorSearch" prefHeight="25.0" prefWidth="259.0" promptText="Search" styleClass="search">
+                                 <stylesheets>
+                                    <URL value="@dashboardDesign.css" />
+                                    <URL value="@uiDesign.css" />
+                                 </stylesheets>
+                              </TextField>
+                              <TableView fx:id="visitors_tableView" layoutX="6.0" layoutY="163.0" onMouseClicked="#selectVisitorData" prefHeight="375.0" prefWidth="881.0">
+                                 <columns>
+                                    <TableColumn fx:id="visitors_col_visitorsid" prefWidth="60.666656494140625" text="ID" />
+                                    <TableColumn fx:id="visitors_col_fname" prefWidth="120.66668701171875" text="First Name" />
+                                    <TableColumn fx:id="visitors_col_lname" prefWidth="122.0" text="Last Name" />
+                                    <TableColumn fx:id="visitors_col_gender" prefWidth="66.00006103515625" text="Sex" />
+                                    <TableColumn fx:id="visitors_col_phone" minWidth="0.0" prefWidth="142.0" text="Phone Number" />
+                                    <TableColumn fx:id="visitors_col_email" prefWidth="138.0" text="Email" />
+                                    <TableColumn fx:id="visitor_col_date" prefWidth="137.3333740234375" text="Visit Date" />
+                                    <TableColumn fx:id="visitors_col_payment" prefWidth="87.33319091796875" text="Payment" />
+                                 </columns>
+                                 <stylesheets>
+                                    <URL value="@dashboardDesign.css" />
+                                    <URL value="@uiDesign.css" />
+                                 </stylesheets>
+                              </TableView>
+                              <TextField fx:id="tfVisitorFname" layoutX="130.0" layoutY="13.0" />
+                              <TextField fx:id="tfVisitorLname" layoutX="130.0" layoutY="51.0" />
+                              <TextField fx:id="tfVisitorPhone" layoutX="431.0" layoutY="13.0" />
+                              <ComboBox fx:id="cbVisitorSex" layoutX="130.0" layoutY="91.0" onAction="#comboBoxGender" prefHeight="25.0" prefWidth="105.0" promptText="Choose" styleClass="text-field" stylesheets="@uiDesign.css" />
+                              <TextField fx:id="tfVisitorEmail" layoutX="431.0" layoutY="52.0" />
+                              <Label layoutX="26.0" layoutY="16.0" stylesheets="@uiDesign.css" text="First Name :">
+                                 <font>
+                                    <Font name="Tahoma" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="615.0" layoutY="91.0" mnemonicParsing="false" onAction="#visitorDelete" styleClass="delete-btn" stylesheets="@uiDesign.css" text="Delete" />
+                              <Button layoutX="693.0" layoutY="90.0" mnemonicParsing="false" onAction="#visitorUpdate" styleClass="update-btn" stylesheets="@uiDesign.css" text="Update" />
+                              <Label layoutX="32.0" layoutY="54.0" stylesheets="@uiDesign.css" text="Last Name:">
+                                 <font>
+                                    <Font name="Tahoma" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="77.0" layoutY="93.0" stylesheets="@uiDesign.css" text="Sex :">
+                                 <font>
+                                    <Font name="Tahoma" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="336.0" layoutY="16.0" stylesheets="@uiDesign.css" text="Phone # :">
+                                 <font>
+                                    <Font name="Tahoma" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="361.0" layoutY="55.0" stylesheets="@uiDesign.css" text="Email :">
+                                 <font>
+                                    <Font name="Tahoma" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="332.0" layoutY="93.0" stylesheets="@uiDesign.css" text="Visit Date :">
+                                 <font>
+                                    <Font name="Tahoma" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="637.0" layoutY="16.0" stylesheets="@uiDesign.css" text="Payment :">
+                                 <font>
+                                    <Font name="Tahoma" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="637.0" layoutY="54.0" stylesheets="@uiDesign.css" text="Visitor ID: ">
+                                 <font>
+                                    <Font name="Tahoma" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfVisitorId" editable="false" layoutX="716.0" layoutY="50.0" prefHeight="27.0" prefWidth="115.0" />
+                              <ComboBox fx:id="cbVisitorPayment" layoutX="716.0" layoutY="14.0" onAction="#comboBoxPayment" prefHeight="25.0" prefWidth="133.0" promptText="Amount(ETB)" styleClass="text-field" stylesheets="@uiDesign.css" />
+                              <Button layoutX="767.0" layoutY="91.0" mnemonicParsing="false" onAction="#visitorReset" prefHeight="25.0" prefWidth="64.0" styleClass="reset-btn" stylesheets="@uiDesign.css" text="Reset" />
+                              <Label fx:id="visitorMark2" layoutX="243.0" layoutY="87.0" prefHeight="33.0" prefWidth="36.0" textFill="#ff0202">
+                                 <font>
+                                    <Font name="Tahoma" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="visitorMark1" layoutX="857.0" layoutY="9.0" prefHeight="33.0" prefWidth="43.0" textFill="RED">
+                                 <font>
+                                    <Font name="Tahoma" size="20.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="bpVisiteDate" layoutX="431.0" layoutY="90.0" prefHeight="28.0" prefWidth="159.0" styleClass="text-field" stylesheets="@uiDesign.css" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane fx:id="dashboard_Form" layoutX="14.0" layoutY="14.0" prefHeight="549.0" prefWidth="893.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutY="3.0" prefHeight="549.3333333333334" prefWidth="893.3333333333334" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane layoutX="10.0" layoutY="180.0" prefHeight="361.0" prefWidth="871.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <ImageView fitHeight="335.0" fitWidth="401.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/museum%20logo.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="392.0" layoutY="135.0" text="MUSEUM">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="36.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="392.0" layoutY="182.0" text="MANAGEMENT SYSTEM">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="36.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <stylesheets>
+                                          <URL value="@uiDesign.css" />
+                                          <URL value="@dashboardDesign.css" />
+                                       </stylesheets>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="159.0" prefWidth="871.0" stylesheets="@uiDesign.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <AnchorPane layoutX="14.0" layoutY="7.0" prefHeight="141.0" prefWidth="200.0" styleClass="card1">
+                                             <children>
+                                                <Label fx:id="dashboard_items" alignment="CENTER_RIGHT" layoutX="100.0" layoutY="28.0" prefHeight="32.0" prefWidth="74.0" text="0" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma Bold" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="52.0" fitWidth="49.0" layoutX="39.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@images/crown-4710.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label layoutX="67.0" layoutY="102.0" text="Total Items" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Serif Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <stylesheets>
+                                                <URL value="@dashboardDesign.css" />
+                                                <URL value="@uiDesign.css" />
+                                             </stylesheets>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="229.0" layoutY="9.0" prefHeight="141.0" prefWidth="200.0" styleClass="card2" stylesheets="@uiDesign.css">
+                                             <children>
+                                                <Label fx:id="dashboard_visitors" alignment="CENTER_RIGHT" layoutX="128.0" layoutY="27.0" prefHeight="32.0" prefWidth="45.0" text="45" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma Bold" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="19.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@images/team-5704.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label layoutX="56.0" layoutY="101.0" text="Total Visitors" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Serif Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="443.0" layoutY="9.0" prefHeight="141.0" prefWidth="200.0" styleClass="card3" stylesheets="@uiDesign.css">
+                                             <children>
+                                                <Label fx:id="dashboard_totalStaff" alignment="CENTER_RIGHT" layoutX="109.0" layoutY="27.0" prefHeight="32.0" prefWidth="77.0" text="455" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma Bold" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="32.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@images/user-257.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label layoutX="74.0" layoutY="101.0" text="Total Staff" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Serif Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="657.0" layoutY="9.0" prefHeight="141.0" prefWidth="200.0" styleClass="card4" stylesheets="@uiDesign.css">
+                                             <children>
+                                                <Label layoutX="66.0" layoutY="101.0" text="Total Income" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Serif Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="dashboard_totalincome" layoutX="66.0" layoutY="33.0" prefHeight="32.0" prefWidth="129.0" text="100.0" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="FontAwesome" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="52.0" fitWidth="58.0" layoutX="14.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@images/cash-money-6357.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="bookingTicket_Form" prefHeight="564.0" prefWidth="914.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane prefHeight="553.0" prefWidth="899.0">
+                                 <children>
+                                    <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="172.0" prefWidth="871.0" stylesheets="@uiDesign.css">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <AnchorPane layoutY="-1.0" prefHeight="172.0" prefWidth="871.0" styleClass="card1" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Label layoutX="22.0" layoutY="7.0" text="Visitor Information" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="28.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="80.0" layoutY="48.0" text="First Name:" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="bookingTicket_firstName" layoutX="164.0" layoutY="44.0" styleClass="ticket-text-field" stylesheets="@dashboardDesign.css" />
+                                                <Label layoutX="81.0" layoutY="85.0" text="Last Name:" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="bookingTicket_lastName" layoutX="164.0" layoutY="81.0" styleClass="ticket-text-field" stylesheets="@dashboardDesign.css" />
+                                                <Label layoutX="103.0" layoutY="123.0" text="Gender:" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox fx:id="bookingTicket_gender" blendMode="OVERLAY" layoutX="164.0" layoutY="120.0" onAction="#comboBoxGender" prefHeight="25.0" prefWidth="104.0" promptText="Choose" styleClass="ticket-text-field" stylesheets="@dashboardDesign.css" />
+                                                <Label layoutX="387.0" layoutY="42.0" text="Phone#:" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="bookingTicket_phoneNum" layoutX="463.0" layoutY="39.0" styleClass="ticket-text-field" stylesheets="@dashboardDesign.css">
+                                                   <font>
+                                                      <Font name="Tahoma" size="25.0" />
+                                                   </font></TextField>
+                                                <Label layoutX="343.0" layoutY="77.0" text="Email Address : " textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="bookingTicket_btn_rest" layoutX="679.0" layoutY="108.0" mnemonicParsing="false" onAction="#visitorReset" prefHeight="31.0" prefWidth="64.0" styleClass="io-reset-btn" stylesheets="@uiDesign.css" text="Reset" />
+                                                <Label layoutX="375.0" layoutY="114.0" prefHeight="19.0" prefWidth="81.0" text="Visit Date : " textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="bookingTicket_emailAddress" layoutX="463.0" layoutY="73.0" styleClass="ticket-text-field" stylesheets="@dashboardDesign.css">
+                                                   <font>
+                                                      <Font name="Tahoma" size="15.0" />
+                                                   </font></TextField>
+                                                <Label layoutX="648.0" layoutY="67.0" text="Payment:" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox fx:id="bookingTicket_payment" blendMode="OVERLAY" layoutX="720.0" layoutY="64.0" prefHeight="31.0" prefWidth="105.0" promptText="Choose" styleClass="ticket-text-field" stylesheets="@dashboardDesign.css" />
+                                                <Button fx:id="bookingTicket_btn_select" layoutX="758.0" layoutY="107.0" mnemonicParsing="false" onAction="#visitorAdd" prefHeight="31.0" prefWidth="64.0" styleClass="select-btn" stylesheets="@uiDesign.css" text="Add" />
+                                                <DatePicker fx:id="bookingTicket_dp_date" layoutX="463.0" layoutY="111.0" prefHeight="27.0" prefWidth="159.0" promptText="YYYY-MM-DD" styleClass="ticket-text-field" stylesheets="@dashboardDesign.css" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="14.0" layoutY="197.0" prefHeight="347.0" prefWidth="871.0">
+                                       <children>
+                                          <Label layoutX="93.0" layoutY="14.0" text="Select Visitor Information">
+                                             <font>
+                                                <Font name="Arial Bold" size="28.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="80.0" layoutY="86.0" text="First Name:">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="bookingTicket_l_fname" layoutX="164.0" layoutY="81.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                          <Label layoutX="81.0" layoutY="129.0" text="Last Name:">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="bookingTicket_l_lname" layoutX="172.0" layoutY="124.0" prefHeight="29.0" prefWidth="166.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                          <Label layoutX="102.0" layoutY="177.0" text="Gender:">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="bookingTicket_l_gender" layoutX="168.0" layoutY="172.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                          <Label layoutX="371.0" layoutY="129.0" text="Phone Number:">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="bookingTicket_l_phoneNo" layoutX="484.0" layoutY="121.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                          <Label layoutX="436.0" layoutY="177.0" text="Date:">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="bookingTicket_l_date" layoutX="484.0" layoutY="172.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                          <Label layoutX="374.0" layoutY="86.0" text="Email Address:">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="bookingTicket_l_emailAdd" layoutX="484.0" layoutY="80.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                          <Label layoutX="676.0" layoutY="119.0" text="Total: ">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="bookingTicket_l_total" layoutX="719.0" layoutY="115.0" prefHeight="27.0" prefWidth="143.0" text="0.0 ETB">
+                                             <font>
+                                                <Font name="Tahoma" size="19.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <stylesheets>
+                                          <URL value="@dashboardDesign.css" />
+                                          <URL value="@uiDesign.css" />
+                                       </stylesheets>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="profile_form" prefHeight="549.3333333333334" prefWidth="893.3333333333334" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="8.0" layoutY="12.0" prefHeight="553.0" prefWidth="841.0">
+                                 <children>
+                                    <AnchorPane layoutY="-6.0" prefHeight="531.0" prefWidth="241.0" stylesheets="@uiDesign.css">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <Label layoutX="23.0" layoutY="85.0" prefHeight="18.0" prefWidth="64.0" text="User ID :">
+                                             <font>
+                                                <Font name="Tahoma" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tfUserId" editable="false" layoutX="93.0" layoutY="80.0" prefHeight="27.0" prefWidth="89.0" styleClass="text-field" stylesheets="@uiDesign.css" />
+                                          <Label layoutX="19.0" layoutY="233.0" text="Username:">
+                                             <font>
+                                                <Font name="Tahoma" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="17.0" layoutY="267.0" prefHeight="18.0" prefWidth="76.0" text="Password :">
+                                             <font>
+                                                <Font name="Tahoma" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="profile_btnUpdate" layoutX="128.0" layoutY="325.0" mnemonicParsing="false" onAction="#userUpdate" prefHeight="33.0" prefWidth="90.0" styleClass="update-btn" stylesheets="@uiDesign.css" text="Update" />
+                                          <Button fx:id="profile_btnReset" layoutX="31.0" layoutY="325.0" mnemonicParsing="false" onAction="#userReset" prefHeight="33.0" prefWidth="89.0" styleClass="reset-btn" stylesheets="@uiDesign.css" text="Reset" />
+                                          <TextField fx:id="tfUserFname" layoutX="97.0" layoutY="116.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@uiDesign.css" />
+                                          <Label layoutX="10.0" layoutY="121.0" text="First Name :">
+                                             <font>
+                                                <Font name="Tahoma" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tfUserLname" layoutX="97.0" layoutY="151.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@uiDesign.css" />
+                                          <Label layoutX="10.0" layoutY="156.0" text="Last Name :">
+                                             <font>
+                                                <Font name="Tahoma" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tfUserEmail" layoutX="97.0" layoutY="187.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@uiDesign.css" />
+                                          <Label layoutX="33.0" layoutY="192.0" text="Email :">
+                                             <font>
+                                                <Font name="Tahoma" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tfUserUsername" layoutX="94.0" layoutY="228.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@uiDesign.css" />
+                                          <TextField fx:id="tfUserPassword" layoutX="97.0" layoutY="262.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@uiDesign.css" />
+                                          <Label layoutX="74.0" layoutY="41.0" prefHeight="18.0" prefWidth="108.0" text="USER SUMMERY">
+                                             <font>
+                                                <Font name="Tahoma" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="251.0" layoutY="-8.0" prefHeight="531.0" prefWidth="630.0" stylesheets="@uiDesign.css">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <ImageView fitHeight="90.0" fitWidth="89.0" layoutX="39.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/user.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label fx:id="labelFname" layoutX="147.0" layoutY="51.0" text="Tekleeyesus">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="labelLname" layoutX="262.0" layoutY="51.0" prefHeight="30.0" prefWidth="146.0" text="Munye">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="LabelEmail" layoutX="147.0" layoutY="81.0" text="tekleeyesus@gmail.com">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="profile_btnEdit" layoutX="57.0" layoutY="323.0" mnemonicParsing="false" onAction="#userEdit" prefHeight="33.0" prefWidth="89.0" styleClass="add-btn" stylesheets="@uiDesign.css" text="Edit" />
+                                          <GridPane layoutX="128.0" layoutY="171.0" prefHeight="189.0" prefWidth="313.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label fx:id="labelUserId" prefHeight="30.0" prefWidth="228.0" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="User ID     : ">
+                                                   <font>
+                                                      <Font name="Palatino Linotype" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Username :" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="Palatino Linotype" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="labelUsername" prefHeight="30.0" prefWidth="228.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="30.0" prefWidth="109.0" text="Password  :" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="labelPassword" prefHeight="30.0" prefWidth="228.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="manageItem_form" layoutX="6.0" layoutY="6.0" prefHeight="549.3333333333334" prefWidth="893.3333333333334" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Pane layoutX="7.0" layoutY="13.0" prefHeight="525.0" prefWidth="241.0" stylesheets="@uiDesign.css">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="tfitemSource" layoutX="97.0" layoutY="225.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <TextField fx:id="tfitemName" layoutX="92.0" layoutY="101.0" prefHeight="27.0" prefWidth="143.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <TextField fx:id="tfItemId" layoutX="90.0" layoutY="61.0" prefHeight="27.0" prefWidth="146.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="7.0" layoutY="65.0" text="Item ID:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="7.0" layoutY="105.0" text="Item Name:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="3.0" layoutY="147.0" text="Catagory:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="5.0" layoutY="187.0" text="Acq. Date :">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="6.0" layoutY="229.0" prefHeight="18.0" prefWidth="101.0" text="Source/Donor: ">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btnAddItem" layoutX="23.0" layoutY="398.0" mnemonicParsing="false" onAction="#itemAdd" prefHeight="33.0" prefWidth="89.0" styleClass="add-btn" stylesheets="@uiDesign.css" text="Add" />
+                                    <Button fx:id="btnUpdateItem" layoutX="128.0" layoutY="398.0" mnemonicParsing="false" onAction="#itemUpdate" prefHeight="33.0" prefWidth="90.0" styleClass="update-btn" stylesheets="@uiDesign.css" text="Update" />
+                                    <Button fx:id="btnResetItem" layoutX="23.0" layoutY="437.0" mnemonicParsing="false" onAction="#itemReset" prefHeight="33.0" prefWidth="89.0" styleClass="reset-btn" stylesheets="@uiDesign.css" text="Reset" />
+                                    <Button fx:id="btnDeleteItem" layoutX="128.0" layoutY="437.0" mnemonicParsing="false" onAction="#itemDelete" prefHeight="33.0" prefWidth="90.0" styleClass="delete-btn" stylesheets="@uiDesign.css" text="Delete" />
+                                    <Label layoutX="20.0" layoutY="14.0" text="Manage Items">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="7.0" layoutY="254.0" text="Describtion:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea fx:id="taitemDes" layoutX="10.0" layoutY="279.0" prefHeight="97.0" prefWidth="221.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <ComboBox fx:id="cbItemsCategory" layoutX="90.0" layoutY="143.0" onAction="#comboBoxItemCategory" prefHeight="25.0" prefWidth="143.0" styleClass="text-field" stylesheets="@uiDesign.css" />
+                                    <Label fx:id="itemMark" layoutX="218.0" layoutY="146.0" prefHeight="20.0" prefWidth="26.0" textFill="RED">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="tfitemdate" layoutX="90.0" layoutY="183.0" prefHeight="27.0" prefWidth="146.0" promptText="YYYY-MM-DD" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="254.0" layoutY="10.0" prefHeight="531.0" prefWidth="630.0" stylesheets="@uiDesign.css">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="item_TableView" layoutX="5.0" layoutY="45.0" onMouseClicked="#SelectItemData" prefHeight="471.0" prefWidth="621.0" stylesheets="@uiDesign.css">
+                                       <columns>
+                                          <TableColumn fx:id="item_col_itemid" prefWidth="74.00003051757812" text="Item ID" />
+                                          <TableColumn fx:id="item_col_itemName" prefWidth="130.0" text="Item Name" />
+                                          <TableColumn fx:id="item_col_catagory" prefWidth="134.0" text="Catagory" />
+                                          <TableColumn fx:id="item_col_date" prefWidth="115.33331298828125" text="Acquisition Date" />
+                                          <TableColumn fx:id="item_col_source" prefWidth="170.0" text="Source/Donor" />
+                                       </columns>
+                                    </TableView>
+                                    <TextField fx:id="item_search" layoutX="7.0" layoutY="14.0" onKeyTyped="#searchDatabase" prefHeight="25.0" prefWidth="228.0" promptText="Search..." styleClass="search" stylesheets="@uiDesign.css" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="manageStuff_form" layoutX="14.0" layoutY="14.0" prefHeight="549.3333333333334" prefWidth="893.3333333333334" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Pane layoutX="14.0" layoutY="12.0" prefHeight="525.0" prefWidth="235.0" stylesheets="@uiDesign.css">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="tfStaffPhone" layoutX="88.0" layoutY="222.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field">
+                                       <stylesheets>
+                                          <URL value="@dashboardDesign.css" />
+                                          <URL value="@uiDesign.css" />
+                                       </stylesheets>
+                                    </TextField>
+                                    <TextField fx:id="tfStuffLname" layoutX="90.0" layoutY="142.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field">
+                                       <stylesheets>
+                                          <URL value="@dashboardDesign.css" />
+                                          <URL value="@uiDesign.css" />
+                                       </stylesheets>
+                                    </TextField>
+                                    <TextField fx:id="tfStaffFname" layoutX="90.0" layoutY="100.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field">
+                                       <stylesheets>
+                                          <URL value="@dashboardDesign.css" />
+                                          <URL value="@uiDesign.css" />
+                                       </stylesheets>
+                                    </TextField>
+                                    <TextField fx:id="tfStaffID" layoutX="90.0" layoutY="60.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field">
+                                       <stylesheets>
+                                          <URL value="@dashboardDesign.css" />
+                                          <URL value="@uiDesign.css" />
+                                       </stylesheets>
+                                    </TextField>
+                                    <Label layoutX="57.0" layoutY="64.0" text="ID">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="105.0" text="First Name:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="147.0" text="Last Name:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="23.0" layoutY="188.0" text="Gender">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="19.0" layoutY="226.0" text="Phone#:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btnAddStaff" layoutX="20.0" layoutY="359.0" mnemonicParsing="false" onAction="#staffAdd" prefHeight="33.0" prefWidth="89.0" styleClass="add-btn" stylesheets="@uiDesign.css" text="Add" />
+                                    <Button fx:id="btnUpdateStaff" layoutX="125.0" layoutY="359.0" mnemonicParsing="false" onAction="#staffUpdate" prefHeight="33.0" prefWidth="90.0" styleClass="update-btn" stylesheets="@uiDesign.css" text="Update" />
+                                    <Button fx:id="btnResetStaff" layoutX="23.0" layoutY="409.0" mnemonicParsing="false" onAction="#staffReset" prefHeight="33.0" prefWidth="89.0" styleClass="reset-btn" stylesheets="@uiDesign.css" text="Reset" />
+                                    <Button fx:id="btnDeleteStaff" layoutX="125.0" layoutY="409.0" mnemonicParsing="false" onAction="#staffDelete" prefHeight="33.0" prefWidth="90.0" styleClass="delete-btn" stylesheets="@uiDesign.css" text="Delete" />
+                                    <Label layoutX="20.0" layoutY="14.0" text="Manage Stuff">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="cbStaffGender" blendMode="DARKEN" layoutX="88.0" layoutY="184.0" onAction="#comboBoxGender" prefHeight="25.0" prefWidth="92.0" promptText="Choose" styleClass="text-field">
+                                       <stylesheets>
+                                          <URL value="@dashboardDesign.css" />
+                                          <URL value="@uiDesign.css" />
+                                       </stylesheets>
+                                    </ComboBox>
+                                    <TextField fx:id="tfStaffAddress" layoutX="91.0" layoutY="259.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field">
+                                       <stylesheets>
+                                          <URL value="@dashboardDesign.css" />
+                                          <URL value="@uiDesign.css" />
+                                       </stylesheets>
+                                    </TextField>
+                                    <Label layoutX="16.0" layoutY="264.0" text="Address: ">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tfStaffEmail" layoutX="90.0" layoutY="294.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field">
+                                       <stylesheets>
+                                          <URL value="@dashboardDesign.css" />
+                                          <URL value="@uiDesign.css" />
+                                       </stylesheets>
+                                    </TextField>
+                                    <Label layoutX="12.0" layoutY="299.0" text="Email Add.">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="staffMarkLabel" layoutX="188.0" layoutY="189.0" prefHeight="16.0" prefWidth="26.0" textFill="#f80000">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="255.0" layoutY="12.0" prefHeight="525.0" prefWidth="630.0" stylesheets="@uiDesign.css">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="staff_tableview" layoutX="5.0" layoutY="45.0" onMouseClicked="#SelectStaffData" prefHeight="471.0" prefWidth="621.0">
+                                       <columns>
+                                          <TableColumn fx:id="stuff_col_id" prefWidth="38.00006103515625" text="ID" />
+                                          <TableColumn fx:id="stuff_col_fname" prefWidth="92.66671752929688" text="First Name" />
+                                          <TableColumn fx:id="stuff_col_lname" prefWidth="92.6666259765625" text="Last Name" />
+                                          <TableColumn fx:id="stuff_col_gender" prefWidth="61.33331298828125" text="Gender" />
+                                          <TableColumn fx:id="stuff_col_address" prefWidth="94.66668701171875" text="Address" />
+                                          <TableColumn fx:id="stuff_col_phone" prefWidth="88.6666259765625" text="Phone #" />
+                                          <TableColumn fx:id="stuff_col_email" prefWidth="147.3333740234375" text="Email Address" />
+                                       </columns>
+                                       <stylesheets>
+                                          <URL value="@dashboardDesign.css" />
+                                          <URL value="@uiDesign.css" />
+                                       </stylesheets>
+                                    </TableView>
+                                    <TextField fx:id="staff_search" layoutX="7.0" layoutY="14.0" onKeyTyped="#staffSearch" prefHeight="25.0" prefWidth="228.0" promptText="Search..." styleClass="search" stylesheets="@dashboardDesign.css" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</StackPane>

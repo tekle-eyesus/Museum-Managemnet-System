@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DashboardController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="889.0">
+         <children>
+            <BorderPane layoutX="180.0" layoutY="51.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="47.0" prefWidth="1101.0" styleClass="semi-top-form" stylesheets="@dashboardDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="2.0" layoutY="-7.0" prefHeight="600.0" prefWidth="1126.0" styleClass="top-form" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="15.666666666666671" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-7.0">
+                           <children>
+                              <Button fx:id="close" layoutX="1051.0" layoutY="11.0" mnemonicParsing="false" onAction="#close" prefHeight="21.0" prefWidth="34.0" styleClass="close" stylesheets="@dashboardDesign.css" text="X">
+                                 <font>
+                                    <Font name="Sitka Heading" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="minimize" layoutX="1017.0" layoutY="11.0" mnemonicParsing="false" onAction="#minimize" prefHeight="22.0" prefWidth="34.0" styleClass="minimize" stylesheets="@dashboardDesign.css" text="-">
+                                 <font>
+                                    <Font name="Verdana Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="47.0" layoutY="14.0" text="Bus Ticket Booking System">
+                                 <font>
+                                    <Font name="Tahoma" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="551.0" prefWidth="204.0" styleClass="nav-form" stylesheets="@dashboardDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="93.0" fitWidth="95.0" layoutX="49.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons8_administrator_male_50px.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="59.0" layoutY="129.0" text="Welcome," textFill="WHITE">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="13.0" layoutY="152.0" prefHeight="23.0" prefWidth="169.0" text="Admin" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Black" size="18.0" />
+                           </font>
+                        </Label>
+                        <Line endX="83.99998474121094" endY="1.52587890625E-5" layoutX="100.0" layoutY="194.0" startX="-78.00000762939453" startY="1.52587890625E-5" stroke="#e2e1e1" />
+                        <Button fx:id="dashboard_btn" layoutX="1.0" layoutY="201.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="203.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Dashboard" textFill="#9e9eb3" AnchorPane.bottomAnchor="319.66666666666663" AnchorPane.rightAnchor="-0.3333333333333428" />
+                        <Button fx:id="available_btn" layoutY="232.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="204.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Available Bus" textFill="#bdc086" />
+                        <Button fx:id="bookingTicket_btn" layoutX="-1.0" layoutY="264.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="203.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Booking Ticket" textFill="WHITE" />
+                        <Button fx:id="customers_btn" layoutY="296.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="204.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Customers" textFill="#b6db3b" />
+                        <Button fx:id="logout" layoutX="17.0" layoutY="503.0" mnemonicParsing="false" onAction="#logout" prefHeight="23.0" prefWidth="76.0" styleClass="log-out-btn" stylesheets="@dashboardDesign.css" text="Logout" textFill="WHITE">
+                           <font>
+                              <Font name="Sitka Display Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="routes_btn" layoutX="-1.0" layoutY="328.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="204.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Routes" textFill="#b6db3b" />
+                        <Button fx:id="drivers_btn" layoutY="353.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="204.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Drivers" textFill="#b6db3b" />
+                     </children>
+                  </AnchorPane>
+               </left>
+            </BorderPane>
+            <AnchorPane layoutX="207.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="893.0">
+               <children>
+                  <AnchorPane fx:id="cutomers_Form" layoutX="6.0" layoutY="7.333333333333333" prefHeight="549.3333333333334" prefWidth="893.3333333333334" stylesheets="@dashboardDesign.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <TextField fx:id="customers_search" layoutX="8.0" layoutY="14.0" prefHeight="25.0" prefWidth="228.0" promptText="Search" styleClass="search" stylesheets="@dashboardDesign.css" />
+                        <TableView fx:id="customers_tableView" layoutX="8.0" layoutY="47.0" prefHeight="491.0" prefWidth="871.0" stylesheets="@dashboardDesign.css">
+                           <columns>
+                              <TableColumn fx:id="customers_customerNum" prefWidth="74.66664123535156" text="Customer #" />
+                              <TableColumn fx:id="customers_ticketNum" prefWidth="60.66668701171875" text="Ticket #" />
+                              <TableColumn fx:id="customers_firstName" prefWidth="91.33331298828125" text="First Name" />
+                              <TableColumn fx:id="customers_lastName" prefWidth="81.33334350585938" text="Last Name" />
+                              <TableColumn fx:id="customers_gender" prefWidth="73.3333740234375" text="Gender" />
+                              <TableColumn fx:id="customers_phoneNum" prefWidth="92.0" text="Phone Number" />
+                              <TableColumn fx:id="customers_busid" prefWidth="99.3333740234375" text="Bus ID" />
+                              <TableColumn fx:id="customers_location" prefWidth="91.33331298828125" text="Location" />
+                              <TableColumn fx:id="customers_type" prefWidth="89.3333740234375" text="Type" />
+                              <TableColumn fx:id="customers_date" prefWidth="119.99981689453125" text="Date" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="dashboard_Form" layoutX="14.0" layoutY="14.0" prefHeight="549.0" prefWidth="893.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutY="3.0" prefHeight="549.3333333333334" prefWidth="893.3333333333334" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="10.0" layoutY="180.0" prefHeight="361.0" prefWidth="871.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AreaChart fx:id="dashboard_chart" layoutY="17.333333333333332" prefHeight="330.0" prefWidth="877.0" title="Income Chart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="17.0">
+                                       <xAxis>
+                                          <CategoryAxis side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
+                                    </AreaChart>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="159.0" prefWidth="871.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="14.0" layoutY="7.0" prefHeight="141.0" prefWidth="265.0" styleClass="card1" stylesheets="@dashboardDesign.css">
+                                       <children>
+                                          <Label layoutX="91.0" layoutY="99.0" text="Available Bus" textFill="WHITE">
+                                             <font>
+                                                <Font name="Tahoma" size="25.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="dashboard_avilableB" alignment="CENTER_RIGHT" layoutX="175.0" layoutY="11.0" prefHeight="32.0" prefWidth="76.0" text="0" textFill="WHITE">
+                                             <font>
+                                                <Font name="Tahoma" size="25.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="305.0" layoutY="9.0" prefHeight="141.0" prefWidth="265.0" styleClass="card2" stylesheets="@dashboardDesign.css">
+                                       <children>
+                                          <Label layoutX="76.0" layoutY="95.0" text="Today's Income" textFill="WHITE">
+                                             <font>
+                                                <Font name="Tahoma" size="25.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="dashboard_todayincome" alignment="CENTER_RIGHT" layoutX="102.0" layoutY="14.0" prefHeight="32.0" prefWidth="156.0" text="0.0 ETB" textFill="WHITE">
+                                             <font>
+                                                <Font name="Tahoma" size="25.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="595.0" layoutY="7.0" prefHeight="141.0" prefWidth="265.0" styleClass="card3" stylesheets="@dashboardDesign.css">
+                                       <children>
+                                          <Label layoutX="105.0" layoutY="95.0" text="Total Income" textFill="WHITE">
+                                             <font>
+                                                <Font name="Tahoma" size="25.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="dashboard_totalincome" alignment="CENTER_RIGHT" layoutX="107.0" layoutY="14.0" prefHeight="32.0" prefWidth="146.0" text="0.0 ETB" textFill="WHITE">
+                                             <font>
+                                                <Font name="Tahoma" size="25.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="bookingTicket_Form" prefHeight="564.0" prefWidth="914.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="553.0" prefWidth="899.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="172.0" prefWidth="871.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="46.0" layoutY="20.0" text="Bus ID: ">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="bookingTicket_busid" layoutX="103.0" layoutY="16.0" prefHeight="17.0" prefWidth="156.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="39.0" layoutY="53.0" text="Location:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="bookingTicket_location" layoutX="103.0" layoutY="49.0" prefHeight="17.0" prefWidth="156.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="60.0" layoutY="90.0" text="Type:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="bookingTicket_type" layoutX="103.0" layoutY="86.0" prefHeight="17.0" prefWidth="156.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="51.0" layoutY="124.0" text="Ticket:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="bookingTicket_ticketNum" layoutX="103.0" layoutY="120.0" prefHeight="17.0" prefWidth="156.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <AnchorPane layoutX="278.0" layoutY="-1.0" prefHeight="172.0" prefWidth="593.0" styleClass="info-card" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="278.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label layoutX="22.0" layoutY="7.0" text="Customer Information" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="28.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="14.0" layoutY="47.0" text="First Name:" textFill="WHITE">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="bookingTicket_firstName" layoutX="98.0" layoutY="43.0" styleClass="io-textfield" stylesheets="@dashboardDesign.css" />
+                                          <Label layoutX="15.0" layoutY="84.0" text="Last Name:" textFill="WHITE">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="bookingTicket_lastName" layoutX="98.0" layoutY="80.0" styleClass="io-textfield" stylesheets="@dashboardDesign.css" />
+                                          <Label layoutX="37.0" layoutY="122.0" text="Gender:" textFill="WHITE">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="bookingTicket_gender" layoutX="98.0" layoutY="119.0" prefHeight="25.0" prefWidth="104.0" promptText="Choose" styleClass="io-textfield" stylesheets="@dashboardDesign.css" />
+                                          <Label layoutX="307.0" layoutY="42.0" text="Phone#:" textFill="WHITE">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="bookingTicket_phoneNum" layoutX="376.0" layoutY="39.0" styleClass="io-textfield" stylesheets="@dashboardDesign.css" />
+                                          <Label layoutX="327.0" layoutY="83.0" text="Date:" textFill="WHITE">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <DatePicker fx:id="bookingTicket_date" layoutX="376.0" layoutY="80.0" prefHeight="27.0" prefWidth="158.0" promptText="MM_DD_YYYY" styleClass="io-textfield" stylesheets="@dashboardDesign.css" />
+                                          <Button fx:id="bookingTicket_selectbtn" layoutX="470.0" layoutY="123.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="64.0" styleClass="select-btn" stylesheets="@dashboardDesign.css" text="Select" />
+                                          <Button fx:id="bookingTicket_restbtn" layoutX="391.0" layoutY="123.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="64.0" styleClass="io-reset-btn" stylesheets="@dashboardDesign.css" text="Reset" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="14.0" layoutY="197.0" prefHeight="347.0" prefWidth="871.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="31.0" layoutY="14.0" text="Select Customer Information">
+                                       <font>
+                                          <Font name="Arial Bold" size="28.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="41.0" layoutY="87.0" text="First Name:">
+                                       <font>
+                                          <Font name="Tahoma" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="bookingTicket_sci_firstName" layoutX="125.0" layoutY="82.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="41.0" layoutY="127.0" text="Last Name:">
+                                       <font>
+                                          <Font name="Tahoma" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="bookingTicket_sci_lastName" layoutX="125.0" layoutY="122.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="66.0" layoutY="164.0" text="Gender:">
+                                       <font>
+                                          <Font name="Tahoma" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="bookingTicket_sci_gender" layoutX="128.0" layoutY="159.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="14.0" layoutY="204.0" text="Phone Number:">
+                                       <font>
+                                          <Font name="Tahoma" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="bookingTicket_sci_phoneNum" layoutX="125.0" layoutY="199.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="79.0" layoutY="243.0" text="Date:">
+                                       <font>
+                                          <Font name="Tahoma" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="bookingTicket_sci_date" layoutX="125.0" layoutY="238.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="411.0" layoutY="87.0" text="Bus ID:">
+                                       <font>
+                                          <Font name="Tahoma" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="bookingTicket_sci_busid" layoutX="470.0" layoutY="78.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="399.0" layoutY="120.0" text="Location:">
+                                       <font>
+                                          <Font name="Tahoma" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="bookingTicket_sci_location" layoutX="473.0" layoutY="115.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="422.0" layoutY="164.0" text="Type:">
+                                       <font>
+                                          <Font name="Tahoma" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="bookingTicket_sci_type" layoutX="470.0" layoutY="155.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="408.0" layoutY="199.0" text="Ticket#:">
+                                       <font>
+                                          <Font name="Tahoma" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="bookingTicket_sci_ticketNum" layoutX="470.0" layoutY="194.0" prefHeight="29.0" prefWidth="174.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="703.0" layoutY="83.0" text="Total: ">
+                                       <font>
+                                          <Font name="Tahoma" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="bookingTicket_sci_total" layoutX="752.0" layoutY="79.0" prefHeight="27.0" prefWidth="66.0" text="0.0 ETB">
+                                       <font>
+                                          <Font name="Tahoma" size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="bookingTicket_sci_paybtn" layoutX="767.0" layoutY="121.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="81.0" styleClass="select-btn" stylesheets="@dashboardDesign.css" text="Pay" />
+                                    <Button fx:id="bookingTicket_sci_receiptbtn" layoutX="670.0" layoutY="121.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="81.0" styleClass="select-btn" stylesheets="@dashboardDesign.css" text="Receipt" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="avilableB_Form" prefHeight="549.3333333333334" prefWidth="893.3333333333334" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="8.0" layoutY="12.0" prefHeight="553.0" prefWidth="841.0">
+                           <children>
+                              <AnchorPane layoutY="-6.0" prefHeight="531.0" prefWidth="241.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="21.0" layoutY="49.0" text="Bus ID:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="avilableB_busid" layoutX="72.0" layoutY="45.0" prefHeight="25.0" prefWidth="153.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="18.0" layoutY="198.0" text="Capacity :">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="38.0" layoutY="232.0" prefHeight="18.0" prefWidth="38.0" text="Price:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="avilableB_date" layoutX="88.0" layoutY="270.0" prefHeight="28.0" prefWidth="146.0" promptText="MM-DD-YYYY" styleClass="search" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="8.0" layoutY="275.0" text="Leave Date:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="avilableB_addbtn" layoutX="23.0" layoutY="325.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="89.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Add" />
+                                    <Button fx:id="avilableB_updatebtn" layoutX="128.0" layoutY="325.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="90.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Update" />
+                                    <Button fx:id="avilableB_resetbtn" layoutX="23.0" layoutY="364.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="89.0" styleClass="reset-btn" stylesheets="@dashboardDesign.css" text="Reset" />
+                                    <Button fx:id="avilableB_deletebtn" layoutX="128.0" layoutY="364.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="90.0" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="Delete" />
+                                    <TextField fx:id="avilableB_driverid" layoutX="76.0" layoutY="81.0" prefHeight="27.0" prefWidth="153.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="14.0" layoutY="86.0" text="Driver ID:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="avilableB_departure" layoutX="83.0" layoutY="116.0" prefHeight="27.0" prefWidth="146.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="9.0" layoutY="121.0" text="Departure :">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="avilableB_arrival" layoutX="83.0" layoutY="152.0" prefHeight="27.0" prefWidth="146.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="33.0" layoutY="157.0" text="Arrival :">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="avilableB_capacity" layoutX="83.0" layoutY="193.0" prefHeight="27.0" prefWidth="89.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <TextField fx:id="avilableB_price" layoutX="83.0" layoutY="227.0" prefHeight="27.0" prefWidth="89.0" promptText="ETB" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="251.0" layoutY="-8.0" prefHeight="531.0" prefWidth="630.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="avilableB_TableView" layoutX="3.0" layoutY="48.0" onMouseClicked="#availableBSelectBusData" prefHeight="479.0" prefWidth="621.0" stylesheets="@dashboardDesign.css">
+                                       <columns>
+                                          <TableColumn fx:id="avilableB_col_busid" prefWidth="77.3333740234375" text="Bus ID" />
+                                          <TableColumn fx:id="avilableB_col_location" prefWidth="79.3333740234375" text="Driver Id" />
+                                          <TableColumn fx:id="avilableB_col_status" prefWidth="86.66668701171875" text="Leave Date" />
+                                          <TableColumn fx:id="avilableB_col_price" prefWidth="109.3333740234375" text="Departure City" />
+                                          <TableColumn fx:id="avilableB_col_date" prefWidth="114.0" text="Arrival City" />
+                                          <TableColumn fx:id="avilableB_col_status1" prefWidth="83.33331298828125" text="Capacity" />
+                                          <TableColumn fx:id="avilableB_col_status11" prefWidth="66.66664632161462" text="price" />
+                                       </columns>
+                                    </TableView>
+                                    <TextField fx:id="avilableB_search" layoutX="6.0" layoutY="14.0" prefHeight="25.0" prefWidth="221.0" promptText="Search..." styleClass="search" stylesheets="@dashboardDesign.css" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="routes" layoutX="6.0" layoutY="6.0" prefHeight="549.3333333333334" prefWidth="893.3333333333334" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Pane layoutX="7.0" layoutY="13.0" prefHeight="525.0" prefWidth="235.0" stylesheets="@dashboardDesign.css">
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white-bg" />
+                           </styleClass>
+                           <children>
+                              <TextField fx:id="duration" layoutX="88.0" layoutY="262.0" prefHeight="27.0" prefWidth="133.0" promptText="In hour" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                              <TextField fx:id="distance" layoutX="88.0" layoutY="228.0" prefHeight="27.0" prefWidth="133.0" promptText="In KM" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                              <TextField fx:id="arrival" layoutX="88.0" layoutY="189.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                              <TextField fx:id="departure" layoutX="88.0" layoutY="151.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                              <TextField fx:id="routeid" layoutX="88.0" layoutY="112.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                              <Label layoutX="26.0" layoutY="117.0" text="Route ID:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="155.0" text="Departure : ">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="34.0" layoutY="194.0" text="Arrival:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="233.0" text="Distance:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="20.0" layoutY="267.0" text="Duration :">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="avilableB_addrouteaddbtn1" layoutX="27.0" layoutY="315.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="89.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Add" />
+                              <Button fx:id="updateroute" layoutX="132.0" layoutY="315.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="90.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Update" />
+                              <Button fx:id="resetroute" layoutX="27.0" layoutY="354.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="89.0" styleClass="reset-btn" stylesheets="@dashboardDesign.css" text="Reset" />
+                              <Button fx:id="deleteroute" layoutX="132.0" layoutY="354.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="90.0" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="Delete" />
+                              <Label layoutX="20.0" layoutY="14.0" text="Manage Routes">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="254.0" layoutY="10.0" prefHeight="531.0" prefWidth="630.0" stylesheets="@dashboardDesign.css">
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white-bg" />
+                           </styleClass>
+                           <children>
+                              <TableView fx:id="avilableB_TableView1" layoutX="5.0" layoutY="45.0" onMouseClicked="#availableBSelectBusData" prefHeight="471.0" prefWidth="621.0" stylesheets="@dashboardDesign.css">
+                                 <columns>
+                                    <TableColumn fx:id="avilableB_col_busid1" prefWidth="88.666748046875" text="Route ID" />
+                                    <TableColumn fx:id="avilableB_col_location1" prefWidth="121.99993896484375" text="Departure" />
+                                    <TableColumn fx:id="avilableB_col_status1" prefWidth="130.66668701171875" text="Arrival" />
+                                    <TableColumn fx:id="avilableB_col_price1" prefWidth="152.0" text="Duration" />
+                                    <TableColumn fx:id="avilableB_col_date1" prefWidth="127.33331298828125" text="Distance" />
+                                 </columns>
+                              </TableView>
+                              <TextField fx:id="avilableB_search1" layoutX="7.0" layoutY="14.0" prefHeight="25.0" prefWidth="228.0" promptText="Search..." styleClass="search" stylesheets="@dashboardDesign.css" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="drivers" layoutX="14.0" layoutY="14.0" prefHeight="549.3333333333334" prefWidth="893.3333333333334" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="12.0" prefHeight="525.0" prefWidth="235.0" stylesheets="@dashboardDesign.css">
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white-bg" />
+                           </styleClass>
+                           <children>
+                              <TextField fx:id="phone" layoutX="88.0" layoutY="262.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                              <TextField fx:id="licenseno" layoutX="88.0" layoutY="228.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                              <TextField fx:id="dlname" layoutX="88.0" layoutY="189.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                              <TextField fx:id="dfname" layoutX="88.0" layoutY="151.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                              <TextField fx:id="driverid" layoutX="88.0" layoutY="112.0" prefHeight="27.0" prefWidth="133.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                              <Label layoutX="26.0" layoutY="117.0" text="DriverID:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="155.0" text="First Name:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="11.0" layoutY="194.0" text="Last Name:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="16.0" layoutY="233.0" text="LicenseNo:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="27.0" layoutY="267.0" text="Phone#:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="adddriver" layoutX="27.0" layoutY="315.0" mnemonicParsing="false" onAction="#addDriver" prefHeight="33.0" prefWidth="89.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Add" />
+                              <Button fx:id="updatederiver" layoutX="132.0" layoutY="315.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="90.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Update" />
+                              <Button fx:id="resetdriver" layoutX="27.0" layoutY="354.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="89.0" styleClass="reset-btn" stylesheets="@dashboardDesign.css" text="Reset" />
+                              <Button fx:id="deletedriver" layoutX="132.0" layoutY="354.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="90.0" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="Delete" />
+                              <Label layoutX="20.0" layoutY="14.0" text="Manage Drivers">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="264.0" layoutY="12.0" prefHeight="525.0" prefWidth="621.0" stylesheets="@dashboardDesign.css">
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white-bg" />
+                           </styleClass>
+                           <children>
+                              <TableView fx:id="divertable" layoutX="5.0" layoutY="45.0" onMouseClicked="#availableBSelectBusData" prefHeight="471.0" prefWidth="611.0" stylesheets="@dashboardDesign.css">
+                                 <columns>
+                                    <TableColumn fx:id="avilableB_col_busid11" prefWidth="88.666748046875" text="Driver ID" />
+                                    <TableColumn fx:id="avilableB_col_location11" prefWidth="121.99993896484375" text="First Name" />
+                                    <TableColumn fx:id="avilableB_col_status12" prefWidth="130.66668701171875" text="Last Name" />
+                                    <TableColumn fx:id="avilableB_col_price11" prefWidth="152.0" text="License No" />
+                                    <TableColumn fx:id="avilableB_col_date11" prefWidth="127.33331298828125" text="Phone NO." />
+                                 </columns>
+                              </TableView>
+                              <TextField fx:id="avilableB_search11" layoutX="7.0" layoutY="14.0" prefHeight="25.0" prefWidth="228.0" promptText="Search..." styleClass="search" stylesheets="@dashboardDesign.css" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
